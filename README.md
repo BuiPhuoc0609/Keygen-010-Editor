@@ -137,4 +137,26 @@ trỏ vào `v42` ta thấy:
 
 thấy rằng `v42` là byte hex thứ 4 trong license, vậy chương trình chọn kiểu license thông qua đây
 
-Ta sẽ chỉ thực hiện phân tích để viết keygen cho case `0x9C`
+để luồng vào case `0x9C` thì license phải có dạng `AAAA-AA9C-AAAA-AAAA`.
+
+<img width="1214" height="745" alt="image" src="https://github.com/user-attachments/assets/11e3f521-e206-4802-ac01-4b3f4158b0fd" />
+
+Trỏ vào các biến được sử dụng để biết bị trí của nó trong key:
+
+v46:
+
+<img width="885" height="160" alt="image" src="https://github.com/user-attachments/assets/904ca264-b321-48b6-bdec-ee05e221f7c4" />
+
+v44:
+
+<img width="832" height="188" alt="image" src="https://github.com/user-attachments/assets/6503f377-1248-4c57-b3f6-ac32e51a37cb" />
+
+tiếp đến là đầy đủ các phần tử trong license key ứng với các biến:
+
+<img width="899" height="171" alt="image" src="https://github.com/user-attachments/assets/05b7d3b0-1b1a-4ace-89a7-c5a79f92fa8a" />
+
+
+
+
+
+
