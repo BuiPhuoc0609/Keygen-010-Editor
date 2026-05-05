@@ -6,6 +6,24 @@ test license:
 
 Ta đi vào phân tích logic license:
 
+<img width="1051" height="599" alt="image" src="https://github.com/user-attachments/assets/62d32ee2-0237-4446-822e-f12723011067" />
+
+Nhận thấy chương trình yêu cầu điều kiện `n524 == 0xDB` mới xác nhận là license chính xác
+
+`n524` lại là kết quả của hàm `License_Verify`:
+
+<img width="1032" height="568" alt="image" src="https://github.com/user-attachments/assets/466d34eb-3510-4e8b-a02a-8ced15c07bb9" />
+
+Để vào case 78 thì `License_ValidateKey` phải trả về kết quả 78
+
+<img width="1034" height="507" alt="image" src="https://github.com/user-attachments/assets/d4d899b3-3651-4c11-b58a-06338bd3ba7b" />
+
+
+
+Ta sẽ phải viết keygen sao cho thỏa mãn các điều kiện trên.
+
+Đi vào chi tiết:
+
 hàm `License_SetUserName`:
 
 <img width="870" height="592" alt="image" src="https://github.com/user-attachments/assets/2e59e7c2-234f-47ed-9678-6d92204a3a99" />
@@ -154,6 +172,49 @@ v44:
 tiếp đến là đầy đủ các phần tử trong license key ứng với các biến:
 
 <img width="899" height="171" alt="image" src="https://github.com/user-attachments/assets/05b7d3b0-1b1a-4ace-89a7-c5a79f92fa8a" />
+
+trước tiên là ta phải thỏa mãn điều kiện thứ nhất để có thể tiếp tục debug:
+
+<img width="1025" height="520" alt="image" src="https://github.com/user-attachments/assets/d9a5dc21-b40a-431e-a30f-8869da94be25" />
+
+viết script nhỏ bruteforce bằng python để "tạm thời" pass qua bước này:
+
+```python
+key="AAAA-AA9C-AAAA-AAAA"
+kay="3940-4142-4344-4546"
+
+"""
+(v44,v41,v46,v40) -> v20
+(v45,v39) -> a1[108] -> n2
+(v20) -> v21 -> a1[112]
+cmp n2, 0x3E7
+"""
+
+n2=0xf2
+for v40 in range(256):
+    for v41 in range(256):
+        for v44 in range(256):
+            for v46 in range(256):
+                v20=((v44^v41)+(v46^v40)<<8)%0xffff
+                v1 = (((v20 ^ 0x7892) + 0x4D30)&0xffff ^ 0x3421)%0xffff
+                if v1%11:
+                    v21=0
+                else:
+                    v21=v1//11
+                if n2 and (v21-1)&0xffff <= 0x3e7:
+                    print(v21)
+                    print(f"found: {v40}, {v41}, {v44}, {v46}")                
+```
+
+<img width="680" height="466" alt="image" src="https://github.com/user-attachments/assets/fc94a809-186b-442c-aa54-7bf252c8ef2f" />
+
+vậy ta chọn tạm `AA00-009C-AA00-AA9A`
+
+<img width="908" height="394" alt="image" src="https://github.com/user-attachments/assets/5afabc2e-5b0b-469b-afc2-8a3e5d2ea152" />
+
+
+
+
 
 
 
