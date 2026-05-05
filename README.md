@@ -336,6 +336,7 @@ for v40 in range(256):
 
 <img width="975" height="678" alt="image" src="https://github.com/user-attachments/assets/2ee0aa39-ae51-448e-a2d7-6facd22eab7c" />
 
+Do license này không check time nên ta không cần phải lo về ngày expired.
 
 
 
