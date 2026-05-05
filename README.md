@@ -12,12 +12,12 @@ Nhận thấy chương trình yêu cầu điều kiện `n524 == 0xDB` mới xá
 
 `n524` lại là kết quả của hàm `License_Verify`:
 
-<img width="1032" height="568" alt="image" src="https://github.com/user-attachments/assets/466d34eb-3510-4e8b-a02a-8ced15c07bb9" />
+<img width="646" height="201" alt="image" src="https://github.com/user-attachments/assets/3974a27d-50ad-4b91-b9ce-8773cc60e53c" />
 
-Để vào case 78 thì `License_ValidateKey` phải trả về kết quả 78
 
-<img width="1034" height="507" alt="image" src="https://github.com/user-attachments/assets/d4d899b3-3651-4c11-b58a-06338bd3ba7b" />
+Để vào case 45 thì `License_ValidateKey` phải trả về kết quả 45
 
+<img width="836" height="513" alt="image" src="https://github.com/user-attachments/assets/0f35039f-1dc9-43f8-b244-08814fff8b57" />
 
 
 Ta sẽ phải viết keygen sao cho thỏa mãn các điều kiện trên.
